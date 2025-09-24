@@ -1,5 +1,5 @@
 # Use official Python base image
-FROM python:3.9-slim-buster as base
+FROM python:3.9-slim-buster AS base
 
 ENV APP_INSTALL=/app
 ENV PYTHONPATH=${APP_INSTALL}
@@ -22,7 +22,7 @@ WORKDIR /app
 
 ####################################
 # Production Image
-FROM base as production
+FROM base AS production
 
 ENV FLASK_ENV=production
 EXPOSE 80
@@ -31,7 +31,7 @@ ENTRYPOINT gunicorn "app:app" -b 0.0.0.0:$PORT "$@"
 
 ####################################
 # Local Development Image
-FROM base as development
+FROM base AS development
 
 ENV FLASK_ENV=development
 EXPOSE 80
