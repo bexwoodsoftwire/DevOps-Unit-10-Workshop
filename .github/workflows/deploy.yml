@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
         # SET THESE
-        ACR_ADMIN_USERNAME: "containerregistry24925"
-        ACR_LOGIN_SERVER_URL: "containerregistry24925.azurecr.io"
+        ACR_ADMIN_USERNAME: "containerregistry24092025"
+        ACR_LOGIN_SERVER_URL: "containerregistry24092025.azurecr.io"
         # SET THESE IN GITHUB
         ACR_ADMIN_PASSWORD: '${{ secrets.ACR_ADMIN_PASSWORD }}'
     # DECIDE WHETHER YOU WANT A BRANCH CHECK - if so remove the other "if"
