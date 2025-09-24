@@ -1,5 +1,5 @@
 # Use official Python base image
-FROM python:3.9-slim-buster AS base
+FROM python:3.9-slim-bullseye AS base
 
 ENV APP_INSTALL=/app
 ENV PYTHONPATH=${APP_INSTALL}
@@ -10,7 +10,7 @@ ENV ACCEPT_EULA=Y
 RUN apt-get update 
 RUN apt-get -y install curl gnupg apt-transport-https ca-certificates
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list
 RUN apt-get update && apt-get install unixodbc-dev g++ msodbcsql17 mssql-tools -y
 
 COPY requirements.txt .
