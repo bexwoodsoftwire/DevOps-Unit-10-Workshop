@@ -7,7 +7,8 @@ ENV PORT=80
 ENV ACCEPT_EULA=Y
 
 # Install required tools
-RUN apt-get update && apt-get install curl gnupg apt-transport-https ca-certificates -y
+RUN apt-get update 
+RUN apt-get -y install curl gnupg apt-transport-https ca-certificates
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 RUN curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list
 RUN apt-get update && apt-get install unixodbc-dev g++ msodbcsql17 mssql-tools -y
