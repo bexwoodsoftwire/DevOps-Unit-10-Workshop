@@ -1,5 +1,7 @@
-# Use official Python base image
+# Use official Python base image 
 FROM python:3.9-slim-bullseye AS base
+
+# CHANGE TO RERUN PIPELINE
 
 ENV APP_INSTALL=/app
 ENV PYTHONPATH=${APP_INSTALL}
